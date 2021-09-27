@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/test.css' %}">
+
+<h1> TEST ZONE</h1>
+    
+    
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+  
+
+<form method="post" autocomplete="off" class="relative mb-4">
+
+{% csrf_token %}
+{{ formset.management_form }}
+{% for form in formset %}
+
+<div class="border border-yellow-600 rounded-lg px-2">
+{% for field in form %}
+{{field}}
+{% endfor %}
+</div>
+
+
+
+{% endfor %}
+<button type="submit" class="my-5 border-2 border-green-600 rounded-lg px-3 py-2 text-green-400 cursor-pointer hover:bg-green-600 hover:text-green-200">Mettre a jour</button>
+</form> 
+
+
+
+
+
+  
+
+   
+
+
+{% endblock content %}
+
+
+
+
+
+

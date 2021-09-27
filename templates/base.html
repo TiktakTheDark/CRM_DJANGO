@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GFCRM</title>
+    <meta Charset="UTF-8"/>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> 
+</head>
+
+<body>
+    <div>
+    {% include "navbar.html" %}
+    {% block content %}
+    {% endblock content %}
+    {% include "footer.html" %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bg-gray-900">
+  <div class="w-full">
+    <div class="flex">
+      <div class="m-auto my-1.5 flex flex-row gap-6">
+        
+        <!-- Orange Button -->
+        <a href=/category/create/ class="border-2 border-purple-600 rounded-lg px-3 py-2 text-purple-400 cursor-pointer hover:bg-purple-600 hover:text-purple-200">
+          Créer une nouvelle catégorie d'article
+        </a>
+        
+        <a href=/article/ class="border-2 border-purple-600 rounded-lg px-3 py-2 text-purple-400 cursor-pointer hover:bg-purple-600 hover:text-purple-200">
+          Créer un article
+        </a>
+           
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+        
+<table class="w-full table-auto border-separate">
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Num</th>
+    </tr>
+  </thead>
+  
+          {% for cat in object_list %}
+  <tbody>
+    <tr class="hover:bg-purple-600 hover:text-purple-200">
+        
+      <td class="px-2 border border-purple-600 rounded-lg"><a href="/category/{{cat.pk}}">{{cat.title}}</a></td>
+      <td class="px-2 border border-purple-600 rounded-lg"><a href="/category/{{cat.pk}}">{{cat.num}}.000</a></td>
+    </tr>
+
+
+{% for obj in cat.article_set.all %}
+<tr class="hover:bg-purple-600 hover:text-purple-200">
+<td class="px-10 rounded-lg">{{obj}}</td>
+{% endfor %}     
+</tr>
+</tbody>
+
+<ul>
+{% endfor %}
+</table>
+
+
+{% endblock content %}
+
+
+

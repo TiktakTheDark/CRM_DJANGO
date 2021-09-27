@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta Charset="UTF-8"/>
+    <title>My Site</title>
+</head>
+<body>
+    <h1>Scaffolding Test</h1>
+    <a href="/">Go HOME</a>
+       
+       
+    <ul>
+        {% for customer in customers %}
+        <li><a href="/test/{{customer.pk}}/">{{customer}}</a></li>
+        {% endfor %}
+        <p></p>
+        <a href="/test/create/">Nouveau Clients</a>
+    </ul>
+
+</body>
+</html>

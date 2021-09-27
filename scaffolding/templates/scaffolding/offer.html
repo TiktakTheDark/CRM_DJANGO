@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bg-gray-900">
+  <div class="w-full">
+    <div class="flex">
+      <div class="m-auto my-1.5 flex flex-row gap-6">
+        
+        <!-- Orange Button -->
+        <a href=/offer/create/ class="border-2 border-blue-600 rounded-lg px-3 py-2 text-blue-400 cursor-pointer hover:bg-blue-600 hover:text-blue-200">
+          Créer une offre
+        </a>
+        
+           
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+        
+<table class="w-full table-auto border-separate">
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Name</th>
+      <th>Adress</th>
+      <th>NPA</th>
+      <th>Ville</th>
+      <th>Status</th>
+      <th>Client</th>
+    </tr>
+  </thead>
+  
+          {% for offer in object_list %}
+  <tbody>
+    <tr class="hover:bg-blue-600 hover:text-blue-200">
+      <td class="border border-blue-600 rounded-lg px-2"><a style="display:inline-block;width:100%;height:100%;" href="/offer/{{offer.pk}}">{{offer.title}}</a></td>
+      
+      <td class="border border-blue-600 rounded-lg px-2"><a style="display:inline-block;width:100%;height:100%;" href="/offer/{{offer.pk}}">{{offer.construction_site_name}}</a></td>
+      <td class="border border-blue-600 rounded-lg px-2"><a style="display:inline-block;width:100%;height:100%;" href="/offer/{{offer.pk}}">{{offer.construction_site_adress}}</a></td>
+      <td class="border border-blue-600 rounded-lg px-2"><a style="display:inline-block;width:100%;height:100%;" href="/offer/{{offer.pk}}">{{offer.construction_site_zip_code}}</a></td>
+      <td class="border border-blue-600 rounded-lg px-2"><a style="display:inline-block;width:100%;height:100%;" href="/offer/{{offer.pk}}">{{offer.construction_site_city}}</a></td>
+      <td class="border border-blue-600 rounded-lg px-2"><a style="display:inline-block;width:100%;height:100%;" href="/offer/{{offer.pk}}">{{offer.status}}</a></td>
+      <td class="border border-blue-600 rounded-lg px-2"><a style="display:inline-block;width:100%;height:100%;" href="/offer/{{offer.pk}}">{{offer.customer}}</a></td>
+    </tr>
+
+
+  </tbody>
+
+        
+
+        {% endfor %}
+</table>
+
+{% endblock content %}
+
+
+

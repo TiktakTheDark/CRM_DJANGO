@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+{% load static %}
+
+<h1> TEST ZONE</h1>
+    
+    
+
+
+<form method="post">
+
+  {{ form }}
+  {% for formset in inlines %}
+    {{ formset.as_p }}
+  {% endfor %}
+
+  <input type="submit" value="Submit" />
+</form>
+    
+    
+
+
+
+
+
+{% endblock content %}
+
+
+
+
+
+
+

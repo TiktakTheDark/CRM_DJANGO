@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bg-gray-900">
+  <div class="w-full">
+    <div class="flex">
+      <div class="m-auto my-1.5 flex flex-row gap-6">
+        
+        <!-- Orange Button -->
+        <a href=/customer/create/ class="border-2 border-yellow-600 rounded-lg px-3 py-2 text-yellow-400 cursor-pointer hover:bg-yellow-600 hover:text-yellow-200">
+          Créer un client
+        </a>
+        
+           
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+        
+<table class="w-full table-auto border-separate">
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Name</th>
+      <th>Adress</th>
+      <th>NPA</th>
+      <th>Ville</th>
+    </tr>
+  </thead>
+  
+          {% for customer in object_list %}
+  <tbody>
+    <tr class="hover:bg-yellow-600 hover:text-yellow-200">
+      <td class="border border-yellow-600 rounded-lg px-2"><a style="display:inline-block;width:100%;height:100%;" href="/customer/{{customer.pk}}">{{customer.title}}</a></td>
+      <td class="border border-yellow-600 rounded-lg px-2"><a style="display:inline-block;width:100%;height:100%;" href="/customer/{{customer.pk}}">{{customer.name}}</a></td>
+      <td class="border border-yellow-600 rounded-lg px-2"><a style="display:inline-block;width:100%;height:100%;" href="/customer/{{customer.pk}}">{{customer.adress}}</a></td>
+      <td class="border border-yellow-600 rounded-lg px-2"><a style="display:inline-block;width:100%;height:100%;" href="/customer/{{customer.pk}}">{{customer.zip_code}}</a></td>
+      <td class="border border-yellow-600 rounded-lg px-2"><a style="display:inline-block;width:100%;height:100%;" href="/customer/{{customer.pk}}">{{customer.city}}</a></td>
+    </tr>
+
+
+  </tbody>
+
+        
+
+        {% endfor %}
+</table>
+
+
+{% endblock content %}
+
+
+

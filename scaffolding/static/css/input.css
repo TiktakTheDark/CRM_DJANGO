@@ -1,0 +1,9 @@
+input {
+
+ width: 100%;
+ border-radius: 0.25rem;
+ border-width: 1px;
+--tw-border-opacity: 1;
+border-color: rgba(200, 200, 200, var(--tw-border-opacity));
+}
+
